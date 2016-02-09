@@ -1,0 +1,5 @@
+# .bundle
+.byebug_history
+*.sublime-*
+
+Gemfile.lock

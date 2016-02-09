@@ -1,0 +1,13 @@
+require "run-gem-dev"
+
+name     "Pundit Extra Utilities"
+summary  "A sample Runfile"
+version  PunditExtra::VERSION
+
+RunGemDev::gem_tasks 'pundit_extra'
+
+usage  "test"
+help   "Run tests"
+action :test do 
+  exec "rspec"
+end

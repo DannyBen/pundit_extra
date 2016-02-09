@@ -1,0 +1,100 @@
+# PunditExtra
+
+This library borrows functionality from [CanCan(Can)][2] and adds it to [Pundit][1].
+
+- `can?` and `cannot?` view helpers
+- `load_resource`, `authorize_resource`, `load_and_authorize_resource` and 
+  `skip_authorization` controller filters
+
+
+## Install
+
+Add to your Gemfile:
+
+```
+gem 'pundit_extra'
+```
+
+Add to your `ApplicationController`:
+
+```ruby
+class ApplicationController < ActionController::Base
+  include Pundit
+  include PunditExtra
+end
+```
+
+
+## View Helpers:  `can?` and `cannot?` 
+
+You can use the convenience methods `can?` and `cannot?` in any convreoller 
+and view.
+
+`if can? :assign, @task` is the same as Pundit's `policy(@task).assign?`
+`if can? :index, Task` is the same as Pundit's `policy(Task).index?`
+`if cannot? :assign, @task` is the opposite of `can?`
+
+
+## Autoload and Authorize Resource
+
+You can add these to your controllers to automatically load the resource 
+and/or authorize it. 
+
+```ruby
+class TasksController < ApplicationController
+  before_action :authenticate_user!
+  load_resource except: [:index, :create]
+  authorize_resource except: [:create]
+end
+```
+
+The `load_resource` filter will create the appropriate instance variable 
+based onm the current action.
+
+The `authorize_resource` filter will call Pundit's `authorize @model` in each
+action.
+
+You can use `except: :action`, or `only: :action` to limit the filter to a 
+given action or an array of actions.
+
+Example:
+
+```ruby
+class TasksController < ApplicationController
+  before_action :authenticate_user!
+  load_resource except: [:index, :edit]
+  authorize_resource except: :index
+
+  def show
+    # this happens automatically
+    # @task = Task.find params[:id]
+    # authorize @task
+  end
+
+  def new
+    # this happens automatically
+    # @task = Task.new
+    # authorize @task
+  end
+
+  def create
+  	# this happens automatically
+    # @task = Task.new task_params
+    # authorize @task
+  end
+
+end
+```
+
+## Credits
+
+- [Jonas Nicklas](https://github.com/jnicklas) @ [Pundit][1]
+- [Bryan Rite](https://github.com/bryanrite), [Ryan Bates](https://github.com/ryanb), [Richard Wilson](https://github.com/Senjai) @ [CanCanCan][2]
+- [Tom Morgan](https://github.com/seven1m)
+
+Thanks for building awesome stuff.
+
+---
+
+[1]: https://github.com/elabs/pundit
+[2]: https://github.com/CanCanCommunity/cancancan
