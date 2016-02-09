@@ -1,5 +1,5 @@
 module PunditExtra
-  def self.included(base)
+  def self.included(_base)
     if defined? ActionController::Base
       ActionController::Base.class_eval do
         include PunditExtra::Helpers

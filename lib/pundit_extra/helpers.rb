@@ -9,7 +9,7 @@ module PunditExtra
     end
 
     def cannot?(*args)
-      !can? *args
+      !can?(*args)
     end
   end
 end
