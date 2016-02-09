@@ -7,7 +7,7 @@ describe TasksController do
       expect(response).to be_success
     end
 
-    it "allows unrestricted access" do
+    it "allows access" do
       sign_in_as_admin
       get :index
       task_count = assigns(:tasks).size
