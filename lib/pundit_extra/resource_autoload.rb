@@ -48,12 +48,8 @@ module PunditExtra
 
     def skip_authorization_and_scope
       action = params[:action]
-      if action == 'index'
-        skip_authorization
-        skip_policy_scope
-      else
-        skip_authorization
-      end
+      skip_policy_scope if action == 'index'
+      skip_authorization
     end
 
     def resource_name
