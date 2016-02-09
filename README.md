@@ -62,8 +62,13 @@ Example:
 ```ruby
 class TasksController < ApplicationController
   before_action :authenticate_user!
-  load_resource except: [:index, :edit]
+  load_resource except: [:edit, :complete]
   authorize_resource except: :index
+
+  def index
+    # this happens automatically
+    # @tasks = policy_scope(Task)
+  end
 
   def show
     # this happens automatically
@@ -85,6 +90,13 @@ class TasksController < ApplicationController
 
 end
 ```
+
+In addition, you can use:
+
+- `load_and_authorize_resource` which is a combination shortcut for 
+  `load_resource` and `authorize_resource`
+- `skip_authorization` which sends `skip_authorization` and 
+  `skip_policy_scope` to Pundit for all (or the specified) actions.
 
 ## Credits
 

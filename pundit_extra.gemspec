@@ -15,7 +15,7 @@ Gem::Specification.new do |s|
   s.license     = 'MIT'
   s.required_ruby_version = ">= 2.0.0"
 
-  s.add_development_dependency "combustion"
-  s.add_development_dependency "runfile"
-  s.add_development_dependency "run-gem-dev"
+  s.add_development_dependency "combustion", "~> 0.5"
+  s.add_development_dependency "runfile", "~> 0.5"
+  s.add_development_dependency "run-gem-dev", "~> 0.2"
 end
