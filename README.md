@@ -1,5 +1,7 @@
 # PunditExtra
 
+[![Code Climate](https://codeclimate.com/github/DannyBen/pundit_extra/badges/gpa.svg)](https://codeclimate.com/github/DannyBen/pundit_extra)
+
 This library borrows functionality from [CanCan(Can)][2] and adds it to [Pundit][1].
 
 - `can?` and `cannot?` view helpers
