@@ -1,6 +1,8 @@
 # PunditExtra
 
+[![Gem Version](https://badge.fury.io/rb/pundit_extra.svg)](http://badge.fury.io/rb/pundit_extra)
 [![Code Climate](https://codeclimate.com/github/DannyBen/pundit_extra/badges/gpa.svg)](https://codeclimate.com/github/DannyBen/pundit_extra)
+[![Dependency Status](https://gemnasium.com/DannyBen/pundit_extra.svg)](https://gemnasium.com/DannyBen/pundit_extra)
 
 This library borrows functionality from [CanCan(Can)][2] and adds it to [Pundit][1].
 
