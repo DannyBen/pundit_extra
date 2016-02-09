@@ -3,12 +3,12 @@ require 'bundler'
 
 Bundler.require :default, :development
 
-require 'capybara/rspec'
+# require 'capybara/rspec'
 
 Combustion.initialize! :all
 
 require 'rspec/rails'
-require 'capybara/rails'
+# require 'capybara/rails'
 require_relative 'support'
 include TestSupport
 
