@@ -1,1 +1,13 @@
 <h1>Task: <%= @task %></h1>
+
+<% if can? :update, @task %>
+  <p>You can update this task</p>
+<% end %>
+
+<% if can? :destroy, @task %>
+  <p>You can destroy this task</p>
+<% end %>
+
+<% if cannot? :delegate, @task %>
+  <p>You cannot delegate this task</p>
+<% end %>

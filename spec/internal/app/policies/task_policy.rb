@@ -17,6 +17,20 @@ class TaskPolicy < ApplicationPolicy
     user.admin?
   end
 
-end
+  # Serve as an always true rule
+  def update?
+    true
+  end
 
+  # Serve as an always false rule
+  def destroy?
+    false
+  end
+
+  # Serve as an always false rule
+  def delegate?
+    false
+  end
+
+end
 

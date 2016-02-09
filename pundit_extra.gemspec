@@ -18,4 +18,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency "combustion", "~> 0.5"
   s.add_development_dependency "runfile", "~> 0.5"
   s.add_development_dependency "run-gem-dev", "~> 0.2"
+  s.add_development_dependency "runfile-exec", "~> 0.2"
 end

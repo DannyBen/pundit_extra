@@ -1,13 +1,23 @@
+require "runfile-exec"
 require "run-gem-dev"
 
-name     "Pundit Extra Utilities"
-summary  "A sample Runfile"
+name     "PunditExtra Dev Tools"
+summary  "Utilities for the gem developer"
 version  PunditExtra::VERSION
 
-RunGemDev::gem_tasks 'pundit_extra'
-
-usage  "test"
-help   "Run tests"
-action :test do 
-  exec "rspec"
+usage   "test [<name>]"
+help    "Run all tests or a single test file"
+example "test helpers"
+action :test do |args|
+  single = args['<name>']
+  run single ? "rspec spec/#{single}_spec.rb" : "rspec"
 end
+
+usage   "server"
+help    "Start the rails server"
+action  :server do
+  run "rackup"
+end
+
+# And finally, add all the `run gem *` tasks
+RunGemDev::gem_tasks 'pundit_extra'

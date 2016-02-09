@@ -51,18 +51,17 @@ describe TasksController do
     end
   end
 
-  describe '#whoami' do
-    it "returns false from the can? view helper" do
-      sign_in_as_user
-      get :whoami
-      expect(response.body).to eq "you are a user"      
-    end
+  # describe '#whoami' do
+  #   it "returns false from the can? view helper" do
+  #     sign_in_as_user
+  #     get :whoami
+  #     expect(response.body).to eq "you are a user"      
+  #   end
       
-    it "returns true from the can? view helper" do
-      sign_in_as_admin
-      get :whoami
-      expect(response.body).to eq "you are a ninja"
-    end
-
-  end
+  #   it "returns true from the can? view helper" do
+  #     sign_in_as_admin
+  #     get :whoami
+  #     expect(response.body).to eq "you are a ninja"
+  #   end
+  # end
 end

@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'tasks'              => 'tasks#index'
   get 'tasks/:id'          => 'tasks#show'
   get 'tasks/:id/complete' => 'tasks#complete'
-  get 'tasks/purge'        => 'tasks#purge'
-  get 'tasks/whoami'       => 'tasks#whoami'
+  
+  # get 'tasks/purge'        => 'tasks#purge'
+  get 'whoami'             => 'tasks#whoami'
 end

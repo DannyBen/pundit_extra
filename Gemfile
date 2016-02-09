@@ -6,6 +6,7 @@ group :test do
   gem 'pundit'
   gem 'rspec-rails'
   gem 'byebug'
+  gem 'capybara'
 end
 
 gemspec
