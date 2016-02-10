@@ -18,8 +18,10 @@ module PunditExtra
       end
 
       def load_and_authorize_resource(options={})
+        # :nocov:
         load_resource options
         authorize_resource options
+        # :nocov:
       end    
     end
 
