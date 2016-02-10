@@ -3,5 +3,6 @@
 Gemfile.lock
 
 /gems
+/coverage
 
 *.sublime-*

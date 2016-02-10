@@ -11,7 +11,8 @@ class ApplicationController < ActionController::Base
   protected
 
   def unauthorized
-    redirect_to root_url, :alert => "You are not authorized to perform this action."
+    return if response_body
+    redirect_to root_url, :alert => "You are not authorized to perform this action." 
   end
-  
+
 end

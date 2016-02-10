@@ -1,7 +1,7 @@
 class TasksController < ApplicationController
   load_resource
-  authorize_resource except: [:complete, :purge, :whoami]
-  skip_authorization only: :purge
+  authorize_resource except: [:purge, :whoami, :status]
+  skip_authorization only: :status
 
   def index
   end
@@ -9,12 +9,19 @@ class TasksController < ApplicationController
   def show
   end
 
-  def complete
-    render plain: 'complete'
+  def new
+    render plain: "new task is ready with class #{@task.class}"
+  end
+
+  def create
+    render plain: "will create task with subject #{@task.subject}"
   end
 
   def purge
-    render plain: 'transfer'
+  end
+
+  def status
+    render plain: "the system is up, this is public knowledge"
   end
 
   def whoami
@@ -26,4 +33,12 @@ class TasksController < ApplicationController
     end
     render plain: msg
   end
+
+  protected
+
+  def task_params
+    { subject: params[:subject], done: params[:done] }
+  end
+
+
 end

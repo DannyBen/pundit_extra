@@ -7,9 +7,9 @@ class User
     @attrs[:admin]
   end
 
-  def admin=(value)
-    @attrs[:admin] = value
-  end
+  # def admin=(value)
+  #   @attrs[:admin] = value
+  # end
 
   def self.current_user
     @@current_user ||= User.new

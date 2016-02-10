@@ -1,4 +1,6 @@
+
 class ApplicationPolicy
+  # :nocov:
   class Scope
     attr_reader :user, :scope, :client_id
 
@@ -52,4 +54,5 @@ class ApplicationPolicy
     Pundit.policy_scope!(user, record.class)
   end
 
+  # :nocov:
 end
