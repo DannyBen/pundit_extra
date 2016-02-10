@@ -1,7 +1,7 @@
 class TasksController < ApplicationController
   load_resource
-  authorize_resource except: [:complete, :purge, :whoami]
-  skip_authorization only: :purge
+  authorize_resource except: [:purge, :whoami, :status]
+  skip_authorization only: :status
 
   def index
   end
@@ -15,6 +15,13 @@ class TasksController < ApplicationController
 
   def create
     render plain: "will create task with subject #{@task.subject}"
+  end
+
+  def purge
+  end
+
+  def status
+    render plain: "the system is up, this is public knowledge"
   end
 
   def whoami

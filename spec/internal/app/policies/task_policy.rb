@@ -32,5 +32,10 @@ class TaskPolicy < ApplicationPolicy
     false
   end
 
+  # For view can? testing
+  def karate?
+    user.admin?
+  end
+
 end
 

@@ -5,18 +5,11 @@ name     "PunditExtra Dev Tools"
 summary  "Utilities for the gem developer"
 version  PunditExtra::VERSION
 
-usage   "test [<name>]"
-help    "Run all tests or a single test file"
-example "test helpers"
-action :test do |args|
-  single = args['<name>']
-  run single ? "rspec spec/#{single}_spec.rb" : "rspec"
-end
-
 help    "Start the rails server"
 action  :server, :s do
   run "rackup"
 end
 
-# And finally, add all the `run gem *` tasks
+# And finally, add all the `run gem *` tasks and `run spec` tasks
 RunGemDev::gem_tasks 'pundit_extra'
+RunGemDev::rspec_tasks

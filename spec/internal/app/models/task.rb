@@ -15,6 +15,10 @@ class Task
     attributes[:subject] ||= TASKS[id]
   end
 
+  def to_s
+    subject
+  end
+
   def self.all
     TASKS
   end
