@@ -13,8 +13,8 @@ class TaskPolicy < ApplicationPolicy
     user.admin? ? true : record.id == 0
   end
 
-  def karate?
-    user.admin?
+  def create?
+    true
   end
 
   # Serve as an always true rule

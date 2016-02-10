@@ -13,9 +13,8 @@ action :test do |args|
   run single ? "rspec spec/#{single}_spec.rb" : "rspec"
 end
 
-usage   "server"
 help    "Start the rails server"
-action  :server do
+action  :server, :s do
   run "rackup"
 end
 

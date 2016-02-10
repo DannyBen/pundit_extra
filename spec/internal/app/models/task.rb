@@ -1,16 +1,18 @@
 class Task 
   TASKS = ["Task 0", "Task 1", "Task 2"]
 
-  def initialize(attrs={})
-    @attrs = attrs
+  attr_accessor :attributes
+
+  def initialize(attributes={})
+    @attributes = attributes
   end
 
   def id
-    @attrs[:id].to_i
+    @attributes[:id].to_i
   end
 
   def subject
-    @subject ||= TASKS[id]
+    attributes[:subject] ||= TASKS[id]
   end
 
   def self.all
@@ -20,4 +22,5 @@ class Task
   def self.find(id)
     Task.new id: id.to_i
   end
+
 end

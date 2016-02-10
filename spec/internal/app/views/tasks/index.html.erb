@@ -1,2 +1,6 @@
+<% flash.each do |type, message| %> 
+  <%= "#{type}: #{message}" %>
+<% end %>
+
 <h1>Task Count: <%= @tasks.size %></h1>
 
