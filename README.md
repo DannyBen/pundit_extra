@@ -35,9 +35,9 @@ end
 You can use the convenience methods `can?` and `cannot?` in any convreoller 
 and view.
 
-`if can? :assign, @task` is the same as Pundit's `policy(@task).assign?`
-`if can? :index, Task` is the same as Pundit's `policy(Task).index?`
-`if cannot? :assign, @task` is the opposite of `can?`
+- `if can? :assign, @task` is the same as Pundit's `policy(@task).assign?`
+- `if can? :index, Task` is the same as Pundit's `policy(Task).index?`
+- `if cannot? :assign, @task` is the opposite of `can?`
 
 
 ## Autoload and Authorize Resource
