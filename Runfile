@@ -1,15 +1,17 @@
-require "runfile-exec"
 require "run-gem-dev"
+include Runfile::Exec
 
 name     "PunditExtra Dev Tools"
 summary  "Utilities for the gem developer"
 version  PunditExtra::VERSION
 
 help    "Start the rails server"
-action  :server, :s do
+action  :s, :server do
   run "rackup"
 end
 
-# And finally, add all the `run gem *` tasks and `run spec` tasks
+# `run gem *` tasks
 RunGemDev::gem_tasks 'pundit_extra'
+
+# `run spec` tasks
 RunGemDev::rspec_tasks
