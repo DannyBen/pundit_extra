@@ -32,7 +32,7 @@ end
 
 ## View Helpers:  `can?` and `cannot?` 
 
-You can use the convenience methods `can?` and `cannot?` in any convreoller 
+You can use the convenience methods `can?` and `cannot?` in any controller 
 and view.
 
 - `if can? :assign, @task` is the same as Pundit's `policy(@task).assign?`
