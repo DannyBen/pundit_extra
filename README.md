@@ -11,6 +11,14 @@ This library borrows functionality from [CanCan(Can)][2] and adds it to [Pundit]
 - `load_resource`, `authorize_resource`, `load_and_authorize_resource` and 
   `skip_authorization` controller filters
 
+The design intentions were:
+
+1. To ease the transition from CanCanCan to Pundit.
+2. To reduce boilerplate code in controller methods.
+3. To keep things simple and intentionally avoid dealing with edge cases or
+   endless magical options you need to memorize.
+
+---
 
 ## Install
 
