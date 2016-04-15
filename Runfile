@@ -1,4 +1,4 @@
-require "run-gem-dev"
+require "runfile-tasks"
 include Runfile::Exec
 
 name     "PunditExtra Dev Tools"
@@ -10,8 +10,5 @@ action  :s, :server do
   run "rackup"
 end
 
-# `run gem *` tasks
-RunGemDev::gem_tasks 'pundit_extra'
-
-# `run spec` tasks
-RunGemDev::rspec_tasks
+RunfileTasks::RubyGems.all 'pundit_extra'
+RunfileTasks::Testing.rspec
