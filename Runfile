@@ -1,5 +1,5 @@
 require "runfile-tasks"
-include Runfile::Exec
+require_relative 'lib/pundit_extra'
 
 name     "PunditExtra Dev Tools"
 summary  "Utilities for the gem developer"
