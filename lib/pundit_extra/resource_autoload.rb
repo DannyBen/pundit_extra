@@ -6,15 +6,15 @@ module PunditExtra
 
     module ClassMethods
       def load_resource(options={})
-        before_filter :load_resource, options.dup
+        before_action :load_resource, options.dup
       end
 
       def authorize_resource(options={})
-        before_filter :authorize_resource, options.dup
+        before_action :authorize_resource, options.dup
       end
 
       def skip_authorization(options={})
-        before_filter :skip_authorization_and_scope, options.dup
+        before_action :skip_authorization_and_scope, options.dup
       end
 
       def load_and_authorize_resource(options={})
@@ -22,7 +22,7 @@ module PunditExtra
         load_resource options
         authorize_resource options
         # :nocov:
-      end    
+      end
     end
 
     def load_resource
