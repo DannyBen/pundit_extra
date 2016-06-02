@@ -62,7 +62,7 @@ end
 ```
 
 The `load_resource` filter will create the appropriate instance variable 
-based onm the current action.
+based on the current action.
 
 The `authorize_resource` filter will call Pundit's `authorize @model` in each
 action.
