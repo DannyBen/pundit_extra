@@ -34,7 +34,29 @@ describe "#load_resource" do
       sign_in_as_user
       visit '/tasks/create?subject=yes+we+can&done=false'
       expect(page).to have_content "yes we can"
-    end    
+    end
+
+    context "with permitted_attributes" do
+
+      it "should assign restricted model params" do
+        sign_in_as_user
+        visit '/books/create?book[author]=Author&book[title]=Title'
+        expect(page).to have_content '{"author"=>"Author"}'
+      end
+
+      it "should assign liberal model params" do
+        sign_in_as_admin
+        visit '/books/create?book[author]=Author&book[title]=Title&not_allowed=NotAllowed'
+        expect(page).to have_content '{"title"=>"Title", "author"=>"Author"}'
+      end
+
+      it "should assign model params for specific action" do
+        sign_in_as_user
+        visit '/books/update?book[price]=123&not_allowed=NotAllowed'
+        expect(page).to have_content '{"price"=>"123"}'
+      end
+
+    end
 
   end
 
