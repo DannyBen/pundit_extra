@@ -3,10 +3,10 @@ class BooksController < ApplicationController
   authorize_resource
 
   def create
-    render plain: "will create book with params: #{permitted_attributes(@book)}"
+    render plain: "will create book: #{@book.attributes}"
   end
 
   def update
-    render plain: "will update book with params: #{permitted_attributes(@book)}"
+    render plain: "will update book: #{permitted_attributes(@book)}"
   end
 end
