@@ -29,17 +29,25 @@ module PunditExtra
       scope = resource_class
       action = params[:action]
       varname = resource_name
+
       if action == 'index'
         varname = controller_name
         resource = policy_scope resource_class
-      elsif ['new', 'create'].include? action
+
+      elsif action == 'new'
         resource = scope.new
-        resource.attributes = send("#{resource_name}_params") if action == 'create'
+
+      elsif action == 'create'
+        resource = scope.new
+        resource.attributes = resource_attributes resource, action
+
       elsif params[:id]
         resource = scope.find params[:id]
+
       else
         resource = nil
       end
+
       instance_variable_set "@#{varname}", resource
     end
 
@@ -64,6 +72,20 @@ module PunditExtra
 
     def resource_instance
       instance_variable_get "@#{resource_name}"
+    end
+
+    def resource_attributes(resource, action)
+      if has_permitted_attributes? resource, action
+        permitted_attributes(resource)
+      else
+        send "#{resource_name}_params"
+      end
+    end
+
+    def has_permitted_attributes?(resource, action)
+      return true if policy(resource).respond_to? "permitted_attributes_for_#{action}"
+      return true if policy(resource).respond_to? :permitted_attributes
+      false
     end
   end
 end
