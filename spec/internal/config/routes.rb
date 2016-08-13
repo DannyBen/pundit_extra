@@ -7,10 +7,10 @@ Rails.application.routes.draw do
   get 'tasks/purge'  => 'tasks#purge'
   get 'tasks/:id'    => 'tasks#show'
 
-  get 'books'        => 'books#index'
-  get 'books/update' => 'books#update'
-  get 'books/create' => 'books#create'
-  get 'books/:id'    => 'books#show'
+  get 'books'            => 'books#index'
+  get 'books/:id/update' => 'books#update'
+  get 'books/create'     => 'books#create'
+  get 'books/:id'        => 'books#show'
 
   get 'status'       => 'tasks#status'
   get 'whoami'       => 'tasks#whoami'

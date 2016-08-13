@@ -41,10 +41,6 @@ module PunditExtra
         resource = scope.new
         resource.attributes = resource_attributes resource, action
 
-      elsif action == 'update'
-        resource = scope.find params[:id]
-        resource.attributes = resource_attributes resource, action
-
       elsif params[:id]
         resource = scope.find params[:id]
 

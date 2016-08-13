@@ -52,7 +52,7 @@ describe "#load_resource" do
 
       it "should assign model params for specific action" do
         sign_in_as_user
-        visit '/books/update?book[price]=123&not_allowed=NotAllowed'
+        visit '/books/1/update?book[price]=123&not_allowed=NotAllowed'
         expect(page).to have_content '{"price"=>"123"}'
       end
 
