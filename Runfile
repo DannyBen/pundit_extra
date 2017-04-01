@@ -1,7 +1,7 @@
 require "runfile-tasks"
 require_relative 'lib/pundit_extra'
 
-name     "PunditExtra Dev Tools"
+title    "PunditExtra Dev Tools"
 summary  "Utilities for the gem developer"
 version  PunditExtra::VERSION
 

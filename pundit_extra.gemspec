@@ -1,5 +1,6 @@
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+require 'date'
 require 'pundit_extra/version'
 
 Gem::Specification.new do |s|
@@ -16,6 +17,6 @@ Gem::Specification.new do |s|
   s.required_ruby_version = ">= 2.0.0"
 
   s.add_development_dependency "combustion", "~> 0.5"
-  s.add_development_dependency "runfile", "~> 0.7"
+  s.add_development_dependency "runfile", "~> 0.9"
   s.add_development_dependency 'runfile-tasks', '~> 0.4'
 end
