@@ -2,7 +2,8 @@
 
 [![Gem](https://img.shields.io/gem/v/pundit_extra.svg?style=flat-square)](https://rubygems.org/gems/pundit_extra)
 [![Travis](https://img.shields.io/travis/DannyBen/pundit_extra.svg?style=flat-square)](https://travis-ci.org/DannyBen/pundit_extra)
-[![Code Climate](https://img.shields.io/codeclimate/github/DannyBen/pundit_extra.svg?style=flat-square)](https://codeclimate.com/github/DannyBen/pundit_extra)
+[![Maintainability](https://img.shields.io/codeclimate/maintainability/DannyBen/pundit_extra.svg?style=flat-square)](https://codeclimate.com/github/DannyBen/pundit_extra)
+[![Issues](https://img.shields.io/codeclimate/issues/github/DannyBen/pundit_extra.svg?style=flat-square)](https://codeclimate.com/github/DannyBen/pundit_extra)
 [![Gemnasium](https://img.shields.io/gemnasium/DannyBen/pundit_extra.svg?style=flat-square)](https://gemnasium.com/DannyBen/pundit_extra)
 
 This library borrows functionality from [CanCan(Can)][2] and adds it to [Pundit][1].
