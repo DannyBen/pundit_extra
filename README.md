@@ -1,7 +1,7 @@
 # PunditExtra
 
 [![Gem Version](https://badge.fury.io/rb/pundit_extra.svg)](https://badge.fury.io/rb/pundit_extra)
-[![Build Status](https://travis-ci.org/DannyBen/pundit_extra.svg?branch=master)](https://travis-ci.org/DannyBen/pundit_extra)
+[![Build Status](https://travis-ci.com/DannyBen/pundit_extra.svg?branch=master)](https://travis-ci.com/DannyBen/pundit_extra)
 [![Maintainability](https://api.codeclimate.com/v1/badges/61990b2b88d45ea6c89d/maintainability)](https://codeclimate.com/github/DannyBen/pundit_extra/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/61990b2b88d45ea6c89d/test_coverage)](https://codeclimate.com/github/DannyBen/pundit_extra/test_coverage)
 
