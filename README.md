@@ -97,7 +97,7 @@ class TasksController < ApplicationController
   end
 
   def create
-  	# this happens automatically
+    # this happens automatically
     # @task = Task.new task_params
     # authorize @task
   end
