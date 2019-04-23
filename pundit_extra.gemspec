@@ -14,9 +14,5 @@ Gem::Specification.new do |s|
   s.files       = Dir['README.md', 'lib/**/*.rb']
   s.homepage    = 'https://github.com/DannyBen/pundit_extra'
   s.license     = 'MIT'
-  s.required_ruby_version = ">= 2.0.0"
-
-  s.add_development_dependency "combustion", "~> 0.5"
-  s.add_development_dependency "runfile", "~> 0.9"
-  s.add_development_dependency 'runfile-tasks', '~> 0.4'
+  s.required_ruby_version = ">= 2.3.0"
 end
