@@ -7,7 +7,7 @@ version  PunditExtra::VERSION
 
 help    "Start the rails server"
 action  :s, :server do
-  run "rackup"
+  system "rackup"
 end
 
 RunfileTasks::RubyGems.all 'pundit_extra'
