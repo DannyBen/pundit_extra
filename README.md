@@ -33,7 +33,7 @@ Add to your `ApplicationController`:
 
 ```ruby
 class ApplicationController < ActionController::Base
-  include Pundit::Authorization   # or just Pundit in Rails < 7
+  include Pundit::Authorization
   include PunditExtra
 end
 ```
