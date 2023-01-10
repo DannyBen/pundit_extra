@@ -1,17 +1,17 @@
-source "https://rubygems.org"
+source 'https://rubygems.org'
 
-gem "combustion"
-gem "runfile"
+gem 'combustion'
+gem 'runfile'
 gem 'runfile-tasks'
 
 group :test do
-  gem 'rails'
-  gem 'sqlite3'
-  gem 'simplecov'
-  gem 'pundit'
-  gem 'rspec-rails'
   gem 'byebug'
   gem 'capybara'
+  gem 'pundit'
+  gem 'rails'
+  gem 'rspec-rails'
+  gem 'simplecov'
+  gem 'sqlite3'
 end
 
 gemspec

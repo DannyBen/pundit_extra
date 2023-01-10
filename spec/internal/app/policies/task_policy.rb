@@ -36,6 +36,4 @@ class TaskPolicy < ApplicationPolicy
   def karate?
     user.admin?
   end
-
 end
-

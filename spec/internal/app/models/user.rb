@@ -1,5 +1,13 @@
 class User
-  def initialize(attrs={})
+  class << self
+    attr_writer :current_user
+
+    def current_user
+      @current_user ||= User.new
+    end
+  end
+
+  def initialize(attrs = {})
     @attrs = attrs
   end
 
@@ -10,13 +18,4 @@ class User
   # def admin=(value)
   #   @attrs[:admin] = value
   # end
-
-  def self.current_user
-    @@current_user ||= User.new
-  end
-
-  def self.current_user=(user)
-    @@current_user = user
-  end
 end
-

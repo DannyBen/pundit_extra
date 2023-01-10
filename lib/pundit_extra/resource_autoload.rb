@@ -5,19 +5,19 @@ module PunditExtra
     extend ActiveSupport::Concern
 
     module ClassMethods
-      def load_resource(options={})
+      def load_resource(options = {})
         before_action :load_resource, options.dup
       end
 
-      def authorize_resource(options={})
+      def authorize_resource(options = {})
         before_action :authorize_resource, options.dup
       end
 
-      def skip_authorization(options={})
+      def skip_authorization(options = {})
         before_action :skip_authorization_and_scope, options.dup
       end
 
-      def load_and_authorize_resource(options={})
+      def load_and_authorize_resource(options = {})
         # :nocov:
         load_resource options
         authorize_resource options
@@ -85,6 +85,7 @@ module PunditExtra
     def has_permitted_attributes?(resource, action)
       return true if policy(resource).respond_to? "permitted_attributes_for_#{action}"
       return true if policy(resource).respond_to? :permitted_attributes
+
       false
     end
   end
