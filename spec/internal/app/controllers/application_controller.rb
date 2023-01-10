@@ -8,11 +8,11 @@ class ApplicationController < ActionController::Base
   after_action :verify_authorized
   after_action :verify_policy_scoped, only: :index
 
-  protected
+protected
 
   def unauthorized
     return if response_body
-    redirect_to root_url, :alert => "You are not authorized to perform this action." 
-  end
 
+    redirect_to root_url, alert: 'You are not authorized to perform this action.'
+  end
 end

@@ -1,4 +1,3 @@
-
 class ApplicationPolicy
   # :nocov:
   class Scope
@@ -17,7 +16,8 @@ class ApplicationPolicy
   attr_reader :user, :record, :client_id
 
   def initialize(user, record)
-    raise Pundit::NotAuthorizedError, "must be logged in" unless user
+    raise Pundit::NotAuthorizedError, 'must be logged in' unless user
+
     @user = user
     @record = record
   end
