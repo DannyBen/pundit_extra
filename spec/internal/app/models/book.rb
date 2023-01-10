@@ -3,11 +3,13 @@ class Book
 
   attr_accessor :attributes
 
-  def initialize(attributes = {})
-    @attributes = attributes
+  class << self
+    def find(id)
+      new id: id.to_i
+    end
   end
 
-  def self.find(id)
-    Book.new id: id.to_i
+  def initialize(attributes = {})
+    @attributes = attributes
   end
 end

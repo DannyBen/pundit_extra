@@ -3,6 +3,16 @@ class Task
 
   attr_accessor :attributes
 
+  class << self
+    def all
+      TASKS
+    end
+
+    def find(id)
+      new id: id.to_i
+    end
+  end
+
   def initialize(attributes = {})
     @attributes = attributes
   end
@@ -17,13 +27,5 @@ class Task
 
   def to_s
     subject
-  end
-
-  def self.all
-    TASKS
-  end
-
-  def self.find(id)
-    Task.new id: id.to_i
   end
 end
