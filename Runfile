@@ -1,14 +1,9 @@
-require "runfile-tasks"
-require_relative 'lib/pundit_extra'
-
 title    "PunditExtra Dev Tools"
 summary  "Utilities for the gem developer"
-version  PunditExtra::VERSION
+
+import_gem 'runfile-tasks/gem'
 
 help    "Start the rails server"
 action  :s, :server do
   system "rackup"
 end
-
-RunfileTasks::RubyGems.all 'pundit_extra'
-RunfileTasks::Testing.rspec
