@@ -5,7 +5,7 @@ module PunditExtra
     end
 
     def can?(action, resource)
-      policy(resource).send "#{action}?"
+      policy(resource).send :"#{action}?"
     end
 
     def cannot?(*args)

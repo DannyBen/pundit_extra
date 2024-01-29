@@ -7,7 +7,7 @@ describe 'helpers' do
       visit '/tasks/0'
       expect(page.status_code).to be 200
       expect(page).to have_content 'You can update this task'
-      expect(page).not_to have_content 'You can destroy this task'
+      expect(page).to have_no_content 'You can destroy this task'
       expect(page).to have_content 'You cannot delegate this task'
     end
   end
