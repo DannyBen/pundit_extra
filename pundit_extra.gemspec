@@ -12,6 +12,8 @@ Gem::Specification.new do |s|
   s.files       = Dir['README.md', 'lib/**/*.rb']
   s.homepage    = 'https://github.com/DannyBen/pundit_extra'
   s.license     = 'MIT'
-  s.required_ruby_version = '>= 2.6.0'
+
+  s.required_ruby_version = '>= 3.0.0'
+
   s.metadata['rubygems_mfa_required'] = 'true'
 end

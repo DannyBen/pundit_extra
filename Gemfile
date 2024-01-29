@@ -1,11 +1,11 @@
 source 'https://rubygems.org'
 
 gem 'combustion'
+gem 'debug'
 gem 'runfile'
 gem 'runfile-tasks'
 
 group :test do
-  gem 'byebug'
   gem 'capybara'
   gem 'pundit'
   gem 'rails'

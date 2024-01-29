@@ -48,7 +48,7 @@ module PunditExtra
         resource = nil
       end
 
-      instance_variable_set "@#{varname}", resource
+      instance_variable_set :"@#{varname}", resource
     end
 
     def authorize_resource
@@ -71,19 +71,19 @@ module PunditExtra
     end
 
     def resource_instance
-      instance_variable_get "@#{resource_name}"
+      instance_variable_get :"@#{resource_name}"
     end
 
     def resource_attributes(resource, action)
       if has_permitted_attributes? resource, action
         permitted_attributes(resource)
       else
-        send "#{resource_name}_params"
+        send :"#{resource_name}_params"
       end
     end
 
     def has_permitted_attributes?(resource, action)
-      return true if policy(resource).respond_to? "permitted_attributes_for_#{action}"
+      return true if policy(resource).respond_to? :"permitted_attributes_for_#{action}"
       return true if policy(resource).respond_to? :permitted_attributes
 
       false
