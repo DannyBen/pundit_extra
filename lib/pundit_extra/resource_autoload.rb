@@ -41,6 +41,10 @@ module PunditExtra
         resource = scope.new
         resource.attributes = resource_attributes resource, action
 
+      elsif action == 'update'
+        resource = scope.find params[:id]
+        resource.attributes = resource_attributes resource, action
+
       elsif params[:id]
         resource = scope.find params[:id]
 
@@ -76,10 +80,15 @@ module PunditExtra
 
     def resource_attributes(resource, action)
       if has_permitted_attributes? resource, action
-        permitted_attributes(resource)
-      else
-        send :"#{resource_name}_params"
+        return permitted_attributes resource
       end
+
+      candidates = ["#{action}_params", "#{resource_name}_params"]
+      candidates.each do |candidate|
+        return send(candidate) if respond_to? candidate, true
+      end
+
+      {}
     end
 
     def has_permitted_attributes?(resource, action)

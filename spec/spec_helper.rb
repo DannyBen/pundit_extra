@@ -1,5 +1,11 @@
-require 'simplecov'
-SimpleCov.start
+unless ENV['NOCOV']
+  require 'simplecov'
+
+  SimpleCov.start do
+    enable_coverage :branch
+    coverage_dir 'spec/coverage'
+  end
+end
 
 require 'rubygems'
 require 'bundler'

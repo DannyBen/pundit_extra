@@ -15,6 +15,10 @@ class TasksController < ApplicationController
     render plain: "will create task with subject #{@task.subject}"
   end
 
+  def update
+    render plain: "will update task #{@task.id} with #{@task.attributes}"
+  end
+
   def purge; end
 
   def status
@@ -35,5 +39,9 @@ protected
 
   def task_params
     { subject: params[:subject], done: params[:done] }
+  end
+
+  def update_params
+    { done: params[:done] }
   end
 end

@@ -1,3 +1,5 @@
 /coverage
 /gems
+/spec/coverage
+/tmp
 Gemfile.lock
