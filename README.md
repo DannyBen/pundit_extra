@@ -1,11 +1,5 @@
 # PunditExtra
 
-[![Gem Version](https://badge.fury.io/rb/pundit_extra.svg)](https://badge.fury.io/rb/pundit_extra)
-[![Build Status](https://github.com/DannyBen/pundit_extra/workflows/Test/badge.svg)](https://github.com/DannyBen/pundit_extra/actions?query=workflow%3ATest)
-[![Maintainability](https://api.codeclimate.com/v1/badges/61990b2b88d45ea6c89d/maintainability)](https://codeclimate.com/github/DannyBen/pundit_extra/maintainability)
-
----
-
 This library borrows functionality from [CanCan(Can)][2] and adds it to [Pundit][1].
 
 - `can?` and `cannot?` view helpers
