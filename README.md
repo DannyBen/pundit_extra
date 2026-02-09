@@ -1,5 +1,7 @@
 # PunditExtra
 
+![repocard](https://repocard.dannyben.com/svg/pundit_extra.svg)
+
 This library borrows functionality from [CanCan(Can)][2] and adds it to [Pundit][1].
 
 - `can?` and `cannot?` view helpers
